@@ -7,3 +7,10 @@ while(userGuess != guessNumber) {
 }
 
 console.log("Congrats!! You entered the right number.");
+
+
+
+let user = prompt("Enter your full name without space");
+let user1 = `@${user}${user.length}`;
+console.log(user1);
+
