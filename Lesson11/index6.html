@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+    let words = ['hello', 'world', 'search', 'good', 'search'];
+
+    let index = -1;
+
+    for (let i = 0; i < words.length; i++) {
+      if (words[i] === 'search') {
+        index = 1;
+        break;
+      }
+    }
+
+    console.log(index);
+
+    words = ['not', 'found'];
+    index = -1;
+
+    for (let i = 0; i < words.length; i++) {
+      if (words[i] === 'search') {
+        index = 1;
+        break;
+      }
+    }
+
+    console.log(index);
+
+
+
+    function findIndex(array, word) {
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === word) {
+          return i;
+        }
+      }
+
+      return -1;
+    }
+
+    console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+    console.log(findIndex(['green', 'red', 'blue', 'red'], 'yellow'));
+
+    function removeEgg(foods) {
+      const result = [];
+      let eggRemoved = 0;
+
+      for (let i = 0;i < foods.length; i++) {
+        if(foods[i] === 'egg' && eggRemoved < 2) {
+          eggRemoved++;
+          continue;
+        }
+        result.push(foods[i]);
+      }
+      return result;
+    }
+
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+  </script>
+</body>
+
+</html>
