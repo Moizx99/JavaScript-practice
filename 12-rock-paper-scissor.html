@@ -116,7 +116,7 @@
 
     function autoPlay() {
       if (!isAutoPLaying) {
-         intervalId = setInterval(function () {
+        intervalId = setInterval(function () {
           const computerMove = pickComputerMove();
           playGame(computerMove);
         }, 1000);
