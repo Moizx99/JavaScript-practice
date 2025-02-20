@@ -58,21 +58,15 @@
 
   <p class="game-para">Rock Paper Scissors</p>
 
-  <button class="emoji-button" onclick="
-   playGame('rock');
-  ">
+  <button class="emoji-button js-rock-play">
     <img src="images/rock-emoji.png" alt="" class="emoji-pick">
   </button>
 
-  <button class="emoji-button" onclick="
-   playGame('paper');
-  ">
+  <button class="emoji-button js-paper-play">
     <img src="images/paper-emoji.png" alt="" class="emoji-pick">
   </button>
 
-  <button class="emoji-button" onclick="
-   playGame('scissors');
-  ">
+  <button class="emoji-button js-scissors-play">
     <img src="images/scissors-emoji.png" alt="" class="emoji-pick">
   </button>
 
@@ -125,8 +119,33 @@
         clearInterval(intervalId);
         isAutoPLaying = false;
       }
-
     }
+
+    document.querySelector('.js-rock-play')
+      .addEventListener('click', () => {
+        playGame('rock');
+      });
+
+    document.querySelector('.js-paper-play')
+      .addEventListener('click', () => {
+        playGame('rock');
+      });
+
+    document.querySelector('.js-scissors-play')
+      .addEventListener('click', () => {
+        playGame('rock');
+      });
+
+    document.body.addEventListener('keydown', (event) => {
+      if (event.key === 'r') {
+        playGame('rock');
+      } else if (event.key === 'p') {
+        playGame('paper');
+      } else if (event.key === 's') {
+        playGame('scissors');
+      }
+    });
+
 
     function playGame(playerMove) {
       const computerMove = pickComputerMove();
